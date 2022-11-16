@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sub_A4_1" pageWidth="595" pageHeight="842" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f35d5b55-91d2-4f62-a929-1fda81a7e887">
+    <field name="storeCode" class="java.lang.String">
+    </field>
+    <field name="itemPlu" class="java.lang.String">
+    </field>
+    <field name="itemLongName" class="java.lang.String">
+    </field>
+    <field name="itemPriceValue" class="java.lang.Double">
+    </field>
+    <detail>
+        <band height="465">
+            <rectangle>
+                <reportElement x="30" y="8" width="440" height="457" backcolor="#FFFFFF" uuid="28c75c59-deae-47aa-ab54-af98804f0c2e">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+            </rectangle>
+            <textField textAdjust="StretchHeight" evaluationTime="Page">
+                <reportElement positionType="FixRelativeToBottom" x="130" y="120" width="240" height="80" forecolor="#0D0101" backcolor="#080707" uuid="57fc7451-6fc8-45b3-8508-070e81089e7a">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d548fb12-fff1-4b00-834f-727fab48967c"/>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="40"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{itemLongName}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="290" y="200" width="140" height="20" forecolor="#0D0101" uuid="50a0f948-72fb-4323-9410-4e20636d05a3">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e88e06f1-6352-439f-b264-57edda70c995"/>
+                </reportElement>
+                <textElement textAlignment="Right">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{itemPlu}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="150" y="355" width="178" height="70" uuid="c8d58fe8-08bf-43a9-9a03-1af35d21dd1e">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9426154-b00a-4ac9-a5a3-45c682086d2c"/>
+                </reportElement>
+                <textElement textAlignment="Left">
+                    <font size="45"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{itemPriceValue}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="120" y="355" width="30" height="70" uuid="028af64d-66fe-4019-96e5-e1e8300615aa"/>
+                <textElement textAlignment="Right">
+                    <font size="45"/>
+                </textElement>
+                <text><![CDATA[$]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="180" y="300" width="160" height="50" uuid="6003b666-4048-43df-80db-69b8e3f03852"/>
+                <textElement textAlignment="Left">
+                    <font size="38"/>
+                </textElement>
+                <text><![CDATA[AHORA]]></text>
+            </staticText>
+            <image>
+                <reportElement x="70" y="30" width="360" height="90" uuid="08d59c18-d2f1-489c-a85f-cff2afc440b8"/>
+                <imageExpression><![CDATA["src/main/resources/img/Picture3.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="120" y="230" width="60" height="30" uuid="76c2aef0-7e20-4064-a6a4-fbdfbb909e30"/>
+                <textElement textAlignment="Left">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[ANTES]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="200" y="230" width="160" height="40" uuid="9dd9e828-f187-4e70-95ba-634d6f499a93">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9426154-b00a-4ac9-a5a3-45c682086d2c"/>
+                </reportElement>
+                <textElement textAlignment="Left">
+                    <font size="27"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{itemPriceValue}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="170" y="230" width="30" height="40" uuid="fd9f6b85-7100-44b2-8f58-e3b0e9d6d565"/>
+                <textElement textAlignment="Right">
+                    <font size="27"/>
+                </textElement>
+                <text><![CDATA[$]]></text>
+            </staticText>
+        </band>
+    </detail>
+</jasperReport>
