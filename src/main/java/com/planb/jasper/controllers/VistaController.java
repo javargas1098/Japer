@@ -1,17 +1,25 @@
 package com.planb.jasper.controllers;
 
+import com.planb.jasper.configs.PdfGenerator;
 import com.planb.jasper.dto.JasperDTO;
+import com.planb.jasper.dto.ResponseDTO;
+import lombok.var;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
+import org.apache.commons.io.IOUtils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 import java.util.UUID;
 
@@ -21,33 +29,9 @@ public class VistaController {
 
 
     @GetMapping
-    public String getProductList(@RequestBody List<JasperDTO> jasper, @RequestParam String reportFormat, @RequestParam int type) throws FileNotFoundException, JRException {
-        String path = "E:\\USER\\Projects\\PLANB\\jasper\\e-Commerce-Angular11-Springboot-PostgreSQL\\jasper";
-        File file = null;
-        switch (type) {
-            case 1:
-                file = ResourceUtils.getFile("classpath:jasper1.jrxml");
-                break;
-            case 2:
-                file = ResourceUtils.getFile("classpath:troquel2.jrxml");
-                break;
-            case 3:
-                file = ResourceUtils.getFile("classpath:troquel1.jrxml");
-                break;
-            case 4:
-                file = ResourceUtils.getFile("classpath:nuevoProductoCorto.jrxml");
-                break;
-            case 5:
-                file = ResourceUtils.getFile("classpath:nuevoProductoLargo.jrxml");
-                break;
-            case 6:
-                file = ResourceUtils.getFile("classpath:bajoPrecioCorto.jrxml");
-                break;
-            case 7:
-                file = ResourceUtils.getFile("classpath:bajoPrecioLargo.jrxml");
-                break;
-        }
-
+    public ResponseEntity<ResponseDTO> getProductList(@RequestBody List<JasperDTO> jasper, @RequestParam String reportFormat, @RequestParam String jasperPath) throws FileNotFoundException, JRException {
+        String path = "/Users/javivargas/enviroments/java/Japer/";
+        File file = ResourceUtils.getFile(jasperPath);
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(jasper);
         Map<String, Object> parameters = new HashMap<>();
@@ -56,13 +40,15 @@ public class VistaController {
         UUID uuid = UUID.randomUUID();
         String uuidAsString = uuid.toString();
         if (reportFormat.equalsIgnoreCase("html")) {
-            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\" + uuidAsString + ".pdf");
+            JasperExportManager.exportReportToHtmlFile(jasperPrint,  uuidAsString + ".pdf");
         }
         if (reportFormat.equalsIgnoreCase("pdf")) {
-            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\" + uuidAsString + ".pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, uuidAsString + ".pdf");
         }
+        ResponseDTO responseDTO = new ResponseDTO();
+        responseDTO.setPath(path + uuidAsString + ".pdf");
+        return ResponseEntity.status(HttpStatus.OK).body(responseDTO);
 
-        return "report generated in path : " + path;
 
     }
 
@@ -100,4 +86,18 @@ public class VistaController {
         return "report generated in path : " + path;
 
     }
+    @GetMapping("/gerarPdf")
+    public ResponseEntity<?> geraPDF(@RequestBody List<JasperDTO> jasper, @RequestParam String reportFormat, @RequestParam String jasperPath){
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PdfGenerator pdf = new PdfGenerator();
+        byte[] bytes= pdf.generateJasperReportPDF( jasperPath, outputStream, jasper);
+        UUID uuid = UUID.randomUUID();
+        String uuidAsString = uuid.toString();
+        String name= uuidAsString + ".pdf";
+        return  ResponseEntity.status(HttpStatus.OK)
+                .contentType(MediaType.APPLICATION_PDF).header("Content-Disposition", "filename=\"" + name + "\"").body(bytes);
+
+    }
+
 }
