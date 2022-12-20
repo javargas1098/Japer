@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple_Blue" columnCount="2" printOrder="Horizontal" pageWidth="816" pageHeight="1056" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="387" leftMargin="18" rightMargin="18" topMargin="18" bottomMargin="18" uuid="1feddfdc-e8ac-47fa-a533-95aefe68b6e6">
+    <field name="item_desc_fleje" class="java.lang.String"/>
+    <field name="item_plu_fleje" class="java.lang.String"/>
+    <field name="item_marca_fleje" class="java.lang.String"/>
+    <field name="item_price_fleje" class="java.lang.String"/>
+    <field name="item_presentacion_2_fleje" class="java.lang.String"/>
+    <field name="item_valor_unidad_desc_fleje" class="java.lang.String"/>
+    <field name="item_fecha_fleje" class="java.lang.String"/>
+    <background>
+        <band/>
+    </background>
+    <detail>
+        <band height="228">
+            <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+            <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+            <rectangle>
+                <reportElement x="0" y="2" width="380" height="226" backcolor="#FFFFFF" uuid="c40966a4-5345-430e-9297-74e587765253">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </rectangle>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="false">
+                <reportElement x="220" y="80" width="140" height="40" uuid="b54417b9-01f2-4220-9dc6-981b8e867300">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9426154-b00a-4ac9-a5a3-45c682086d2c"/>
+                </reportElement>
+                <textElement textAlignment="Right">
+                    <font size="35" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_price_fleje}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="10" y="200" width="100" height="20" uuid="adcb5099-22bf-4b19-9f74-069ebd8392d0"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_presentacion_2_fleje}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="280" y="200" width="80" height="18" uuid="50a0f948-72fb-4323-9410-4e20636d05a3">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e88e06f1-6352-439f-b264-57edda70c995"/>
+                </reportElement>
+                <textElement textAlignment="Right">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_plu_fleje}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="10" y="80" width="210" height="50" uuid="57fc7451-6fc8-45b3-8508-070e81089e7a">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d548fb12-fff1-4b00-834f-727fab48967c"/>
+                </reportElement>
+                <textElement textAlignment="Left">
+                    <font size="22"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_desc_fleje}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="220" y="140" width="140" height="30" uuid="57fc7451-6fc8-45b3-8508-070e81089e8a">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d548fb12-fff1-4b00-834f-727fab48967c"/>
+                </reportElement>
+                <textElement textAlignment="Right">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_valor_unidad_desc_fleje}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="230" y="16" width="130" height="18" uuid="d3180a98-f1f3-4023-a795-e6ba25e06a83"/>
+                <textElement textAlignment="Right">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_marca_fleje}]]></textFieldExpression>
+            </textField>
+            <textField pattern="dd-MM-YYY">
+                <reportElement x="120" y="200" width="140" height="19" uuid="c6bf60aa-5a6e-4e7f-ab78-46955d3c45d3"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_fecha_fleje}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="10" y="10" width="30" height="30" uuid="4a559d66-e4a9-4242-a0cd-49e6e13acb2b"/>
+                <imageExpression><![CDATA["src/main/resources/img/Picture2.png"]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+    <summary>
+        <band/>
+    </summary>
+</jasperReport>

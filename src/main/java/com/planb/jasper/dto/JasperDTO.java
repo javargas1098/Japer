@@ -10,10 +10,10 @@ import lombok.Setter;
 public class JasperDTO {
 
     String storeCode;
-    String itemPlu;
+    String item_plu_fleje;
     String itemShortName;
     String itemLongName;
-    double itemPriceValue;
+    String item_price_fleje;
     String itemStockUm;
     double iteStockFactor;
     String itemPackUm;
@@ -22,5 +22,13 @@ public class JasperDTO {
     String structureParentCode;
     String structureName;
     String paramValueString;
+    String item_marca_fleje;
+    String item_desc_fleje;
+    String item_presentacion_2_fleje;
+    String item_fecha_fleje;
+    String item_valor_unidad_desc_fleje;
+
+
+
 }
 
