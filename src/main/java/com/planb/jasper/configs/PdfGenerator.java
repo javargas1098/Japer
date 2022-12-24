@@ -8,6 +8,7 @@ import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import org.springframework.core.io.Resource;
 import org.springframework.util.ResourceUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +22,10 @@ import java.util.Map;
 
 public class PdfGenerator {
 
-    public byte[]  generateJasperReportPDF(String jasperPath, ByteArrayOutputStream outputStream,  List<JasperDTO> jasper) {
+    public byte[]  generateJasperReportPDF(Resource jasperPath, ByteArrayOutputStream outputStream, List<JasperDTO> jasper) {
         JRPdfExporter exporter = new JRPdfExporter();
         try {
-            File file = ResourceUtils.getFile(jasperPath);
+            File file = ResourceUtils.getFile(String.valueOf(jasperPath));
             InputStream jrxmlInput = new FileInputStream(file);
             //this.getClass().getClassLoader().getResource("data.jrxml").openStream();
             JasperDesign design = JRXmlLoader.load(jrxmlInput);

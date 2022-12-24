@@ -1,0 +1,9 @@
+
+spring:
+  cloud:
+    azure:
+      storage:
+        blob:
+          account-name: planbflejesstorage
+          account-key: B+F8K2+C7A4jxdgc6VYgLDdujups17TiH1IMBGCUxa5fAvPRVeCRe0OZApwn+YbjrtAu+sMVLgm++AStE/oLKA==
+          endpoint: https://planbflejesstorage.blob.core.windows.net/flejes

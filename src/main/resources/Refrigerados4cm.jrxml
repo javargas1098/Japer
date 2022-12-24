@@ -22,18 +22,18 @@
                 </reportElement>
             </rectangle>
             <textField textAdjust="StretchHeight" isBlankWhenNull="false">
-                <reportElement x="220" y="40" width="140" height="40" uuid="b54417b9-01f2-4220-9dc6-981b8e867300">
+                <reportElement x="60" y="5" width="260" height="40" uuid="b54417b9-01f2-4220-9dc6-981b8e867300">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9426154-b00a-4ac9-a5a3-45c682086d2c"/>
                 </reportElement>
-                <textElement textAlignment="Right">
-                    <font size="35" isBold="true"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Arial Rounded MT Bold" size="50" isBold="true"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_price_fleje}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="10" y="128" width="81" height="20" uuid="adcb5099-22bf-4b19-9f74-069ebd8392d0"/>
-                <textElement textAlignment="Left">
-                    <font size="12"/>
+                <reportElement x="10" y="128" width="100" height="20" uuid="adcb5099-22bf-4b19-9f74-069ebd8392d0"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial Rounded MT Bold" size="14"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_presentacion_2_fleje}]]></textFieldExpression>
             </textField>
@@ -41,40 +41,40 @@
                 <reportElement x="280" y="130" width="80" height="18" uuid="50a0f948-72fb-4323-9410-4e20636d05a3">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e88e06f1-6352-439f-b264-57edda70c995"/>
                 </reportElement>
-                <textElement textAlignment="Right">
-                    <font size="12"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial Rounded MT Bold" size="12"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_plu_fleje}]]></textFieldExpression>
             </textField>
             <textField textAdjust="StretchHeight">
-                <reportElement x="10" y="40" width="210" height="50" uuid="57fc7451-6fc8-45b3-8508-070e81089e7a">
+                <reportElement x="10" y="60" width="350" height="50" uuid="57fc7451-6fc8-45b3-8508-070e81089e7a">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d548fb12-fff1-4b00-834f-727fab48967c"/>
                 </reportElement>
-                <textElement textAlignment="Left">
-                    <font size="22"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial Rounded MT Bold" size="22"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_desc_fleje}]]></textFieldExpression>
             </textField>
             <textField textAdjust="StretchHeight">
-                <reportElement x="220" y="80" width="140" height="30" uuid="57fc7451-6fc8-45b3-8508-070e81089e8a">
+                <reportElement x="10" y="115" width="100" height="12" uuid="57fc7451-6fc8-45b3-8508-070e81089e8a">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d548fb12-fff1-4b00-834f-727fab48967c"/>
                 </reportElement>
-                <textElement textAlignment="Right">
-                    <font size="14"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial Rounded MT Bold" size="10"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_valor_unidad_desc_fleje}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="230" y="16" width="130" height="18" uuid="d3180a98-f1f3-4023-a795-e6ba25e06a83"/>
-                <textElement textAlignment="Right">
-                    <font size="12"/>
+                <reportElement x="280" y="112" width="80" height="18" uuid="d3180a98-f1f3-4023-a795-e6ba25e06a83"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial Rounded MT Bold" size="10"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_marca_fleje}]]></textFieldExpression>
             </textField>
             <textField pattern="dd-MM-YYY">
-                <reportElement x="110" y="130" width="140" height="19" uuid="c6bf60aa-5a6e-4e7f-ab78-46955d3c45d3"/>
+                <reportElement x="120" y="130" width="140" height="19" uuid="c6bf60aa-5a6e-4e7f-ab78-46955d3c45d3"/>
                 <textElement textAlignment="Center">
-                    <font size="12"/>
+                    <font fontName="Arial Rounded MT Bold" size="12"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{item_fecha_fleje}]]></textFieldExpression>
             </textField>
