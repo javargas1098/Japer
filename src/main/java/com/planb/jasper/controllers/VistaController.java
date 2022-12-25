@@ -42,7 +42,7 @@ public class VistaController {
 
     @GetMapping
     public ResponseEntity<ResponseDTO> getProductList(@RequestBody List<JasperDTO> jasper, @RequestParam String reportFormat, @RequestParam String jasperPath) throws IOException, JRException {
-        String path = "E:\\USER\\Projects\\PLANB\\jasper\\e-Commerce-Angular11-Springboot-PostgreSQL\\jasper";
+        String path = "E:\\USER\\Projects\\PLANB\\jasper";
 //        System.out.println(this.blobFile.getFile());
 //        BlobContainerClient blobContainerClient =
 //                storageClient.getBlobContainerClient(containerName);
